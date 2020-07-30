@@ -11,8 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
 fetch('http://api.weatherstack.com/current?access_key=36e30cb5c24c7928fe571b1d9f4fd2ad&query='+location+'').then((response) => {
     response.json().then((data) => {
         if (data.error) {
-            message_one.textContent=(data.error.info);
-            
+            message_one.textContent=(data.error.info)  
         } else {
             message_one.textContent=(data.location.name);
             message_Two.textContent=(data.current.temperature);
