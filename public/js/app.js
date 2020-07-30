@@ -4,7 +4,7 @@ const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const messsageOne = document.getElementById('message_one');
 const messsageTwo = document.getElementById('message_Two');
-message_one.textContent = '';
+ message_one.textContent = 'enter the city name in above text ';
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = search.value;
@@ -12,6 +12,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+location+'&appid=7658
     response.json().then((data) => {
         if (data.cod==404) {
             message_one.textContent=(data.message)  
+        message_Two.textContent='enter proper city name'
         } else {
             message_one.textContent = (data.name);
             const temp_now = Math.round((data.main.temp - 273.15) * 100) / 100;

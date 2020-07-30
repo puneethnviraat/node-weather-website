@@ -45,3 +45,6 @@ input{
         background: #888888;
         padding: 8px;
     }
+    #about{
+        color: darkred;
+    }
