@@ -8,7 +8,7 @@ message_one.textContent = '';
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = search.value;
-fetch('http://api.weatherstack.com/current?access_key=36e30cb5c24c7928fe571b1d9f4fd2ad&query='+location+'').then((response) => {
+fetch('https://api.weatherstack.com/current?access_key=36e30cb5c24c7928fe571b1d9f4fd2ad&query='+location+'').then((response) => {
     response.json().then((data) => {
         if (data.error) {
             message_one.textContent=(data.error.info)  
